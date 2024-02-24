@@ -56,7 +56,7 @@ public struct OmenTextFieldGrouped: View {
                 .animation(nil)
 
             #if os(iOS)
-                OmenTextFieldRep(
+                OmenTextFieldGroupedRep(
                     text: $text,
                     isFocused: isFocused,
                     height: $height,
@@ -65,7 +65,7 @@ public struct OmenTextFieldGrouped: View {
                 )
                 .frame(height: height)
             #elseif os(macOS)
-                OmenTextFieldRep(
+                OmenTextFieldGroupedRep(
                     text: $text,
                     isFocused: isFocused,
                     height: $height,
