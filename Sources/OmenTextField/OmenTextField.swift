@@ -31,7 +31,7 @@ public struct OmenTextField: View {
     public init<S: StringProtocol>(
         _ title: S,
         text: Binding<String>,
-        promptAlignment: Alignment = .topLeading
+        promptAlignment: Alignment = .topLeading,
         isFocused: Binding<Bool>? = nil,
         returnKeyType: ReturnKeyType = .default,
         onTab: (() -> Void)? = nil,
