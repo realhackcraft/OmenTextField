@@ -13,6 +13,7 @@ public struct OmenTextField: View {
     var isFocused: Binding<Bool>?
     @State var height: CGFloat = 0
     var returnKeyType: ReturnKeyType
+    var promptAlignment: Alignment = .topLeading
     var onCommit: (() -> Void)?
     var onTab: (() -> Void)?
     var onBackTab: (() -> Void)?
@@ -46,7 +47,7 @@ public struct OmenTextField: View {
     }
 
     public var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack(alignment: promptAlignment) {
             Text(title)
                 .foregroundColor(.secondary)
                 .opacity(text.isEmpty ? 0.5 : 0)
