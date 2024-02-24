@@ -23,6 +23,7 @@ import SwiftUI
             view.delegate = context.coordinator
             view.textContainerInset = .zero
             view.textContainer?.lineFragmentPadding = 0
+            view.baseWritingDirection = .rightToLeft
             view.string = text
             DispatchQueue.main.async {
                 height = view.textHeight()
