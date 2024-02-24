@@ -13,7 +13,7 @@ public struct OmenTextField: View {
     var isFocused: Binding<Bool>?
     @State var height: CGFloat = 0
     var returnKeyType: ReturnKeyType
-    var promptAlignment: Alignment = .topLeading
+    var promptAlignment: Alignment
     var onCommit: (() -> Void)?
     var onTab: (() -> Void)?
     var onBackTab: (() -> Void)?
@@ -31,6 +31,7 @@ public struct OmenTextField: View {
     public init<S: StringProtocol>(
         _ title: S,
         text: Binding<String>,
+        promptAlignment: Alignment = .topLeading
         isFocused: Binding<Bool>? = nil,
         returnKeyType: ReturnKeyType = .default,
         onTab: (() -> Void)? = nil,
@@ -39,6 +40,7 @@ public struct OmenTextField: View {
     ) {
         self.title = String(title)
         _text = text
+        self.promptAlignment = promptAlignment
         self.isFocused = isFocused
         self.returnKeyType = returnKeyType
         self.onCommit = onCommit
