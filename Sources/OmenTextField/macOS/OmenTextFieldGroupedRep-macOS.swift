@@ -8,7 +8,7 @@
 import SwiftUI
 
 #if os(macOS)
-    struct OmenTextFieldRep: NSViewRepresentable {
+    struct OmenTextFieldGroupedRep: NSViewRepresentable {
         @Binding var text: String
         var isFocused: Binding<Bool>?
         @Binding var height: CGFloat
@@ -56,9 +56,9 @@ import SwiftUI
         }
 
         class Coordinator: NSObject, NSTextViewDelegate {
-            let rep: OmenTextFieldRep
+            let rep: OmenTextFieldGroupedRep
 
-            internal init(rep: OmenTextFieldRep) {
+            internal init(rep: OmenTextFieldGroupedRep) {
                 self.rep = rep
             }
 
@@ -102,9 +102,9 @@ import SwiftUI
 
     /// This is necessary because `textDidBeginEditing` on `NSTextViewDelegate` only triggers once the user types.
     class CustomNSTextView: NSTextView {
-        let rep: OmenTextFieldRep
+        let rep: OmenTextFieldGroupedRep
 
-        internal init(rep: OmenTextFieldRep) {
+        internal init(rep: OmenTextFieldGroupedRep) {
             self.rep = rep
 
             super.init(frame: .zero, textContainer: NSTextView().textContainer)
