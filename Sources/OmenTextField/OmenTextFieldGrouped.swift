@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct OmenTextField: View {
+public struct OmenTextFieldGrouped: View {
     var title: String
     @Binding var text: String
     var isFocused: Binding<Bool>?
@@ -81,7 +81,7 @@ public struct OmenTextField: View {
 
 // MARK: - ReturnKeyType
 
-public extension OmenTextField {
+public extension OmenTextFieldGrouped {
     enum ReturnKeyType: String, CaseIterable {
         case done
         case next
