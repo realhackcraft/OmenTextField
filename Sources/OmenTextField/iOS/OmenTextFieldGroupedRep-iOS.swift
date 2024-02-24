@@ -8,7 +8,7 @@
 import SwiftUI
 
 #if os(iOS)
-    struct OmenTextFieldRep: UIViewRepresentable {
+    struct OmenTextFieldGroupedRep: UIViewRepresentable {
         @Binding var text: String
         var isFocused: Binding<Bool>?
         @Binding var height: CGFloat
@@ -75,9 +75,9 @@ import SwiftUI
         }
 
         class Coordinator: NSObject, UITextViewDelegate {
-            let rep: OmenTextFieldRep
+            let rep: OmenTextFieldGroupedRep
 
-            internal init(rep: OmenTextFieldRep) {
+            internal init(rep: OmenTextFieldGroupedRep) {
                 self.rep = rep
             }
 
@@ -97,9 +97,9 @@ import SwiftUI
     // MARK: - Custom View
 
     class CustomUITextView: UITextView {
-        let rep: OmenTextFieldRep
+        let rep: OmenTextFieldGroupedRep
 
-        internal init(rep: OmenTextFieldRep) {
+        internal init(rep: OmenTextFieldGroupedRep) {
             self.rep = rep
             super.init(frame: .zero, textContainer: nil)
         }
