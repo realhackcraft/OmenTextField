@@ -4,21 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "OmenTextField",
+    name: "OmenTextFieldGrouped",
     platforms: [
         .iOS(.v14),
         .macOS(.v11),
     ],
     products: [
         .library(
-            name: "OmenTextField",
-            targets: ["OmenTextField"]
+            name: "OmenTextFieldGrouped",
+            targets: ["OmenTextFieldGrouped"]
         ),
     ],
 
     targets: [
         .target(
-            name: "OmenTextField",
+            name: "OmenTextFieldGrouped",
             dependencies: []
         ),
     ]
